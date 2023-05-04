@@ -841,6 +841,16 @@ NSString *ULDocumentUnhandeledSaveErrorNotificationErrorKey			= @"error";
 	// Empty implementation
 }
 
+- (void)didSave
+{
+    // Empty implementation
+}
+
+- (void)didDelete
+{
+    // Empty implementation
+}
+
 - (BOOL)coordinatedOpenFromURL:(NSURL *)url error:(NSError **)outError
 {
 	if (![self readFromURL:url error:outError])
@@ -898,6 +908,7 @@ NSString *ULDocumentUnhandeledSaveErrorNotificationErrorKey			= @"error";
 			
 			// Notify
 			dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                [self didSave];
 				if (completionHandler)
 					completionHandler(success);
 			});
@@ -1275,6 +1286,7 @@ NSString *ULDocumentUnhandeledSaveErrorNotificationErrorKey			= @"error";
 		completionHandler(nil);
 	
 	[_interactionQueue addOperationWithBlock:^{
+        [self didDelete];
 		[self close];
 		self.fileModificationDate = nil;
 		self.fileChangeToken = nil;

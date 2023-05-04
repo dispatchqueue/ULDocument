@@ -117,6 +117,16 @@ typedef NS_ENUM(NSUInteger, ULDocumentChangeKind) {
  */
 - (void)didMoveToURL:(NSURL *)newURL;
 
+/*!
+ @abstract Notifies the subclass that the file has been saved.
+ */
+- (void)didSave;
+
+/*!
+ @abstract Notifies the subclass that the file has been deleted.
+ */
+- (void)didDelete;
+
 
 #pragma mark - General document managment
 
