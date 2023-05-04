@@ -22,6 +22,10 @@
 //	THE SOFTWARE.
 //
 
+#import <Foundation/Foundation.h>
+#if !TARGET_OS_IPHONE
+#import <Cocoa/Cocoa.h>
+#endif
 #import "NSURL+PathUtilities.h"
 
 #import <objc/runtime.h>

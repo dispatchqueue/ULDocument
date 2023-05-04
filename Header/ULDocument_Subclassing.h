@@ -35,14 +35,14 @@
  
  @const ULDocumentChangeNotUndoable	The passed type of change cannot be undone. Only applies to ULDocumentChangeDone, ULDocumentChangeUndone and ULDocumentChangeRedone respectively.
  */
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSUInteger, ULDocumentChangeKind) {
     ULDocumentChangeDone		= 0,
     ULDocumentChangeUndone		= 1,
     ULDocumentChangeRedone		= 2,
     ULDocumentChangeCleared		= 3,
 	
     ULDocumentChangeNotUndoable	= 1 << 8
-} ULDocumentChangeKind;
+};
 
 /*!
  @abstract Methods that can be or should be overriden by subclasses.

@@ -30,12 +30,12 @@
  @const ULDocumentSaveAs	The document was saved by explicit user action to a new URL. This creates a new version of the document on disk, while the original document is kept.
  @const ULDocumentSaveTo	The document is supposed to be written to some URL by explicit user action. This is like an "Export" kind of functionality, not changing the receiving document but just writing out a copy.
  */
-typedef enum : NSUInteger {
+typedef NS_ENUM(NSUInteger, ULDocumentSaveOperation) {
 	ULDocumentSave		= 0,
 	ULDocumentAutosave	= 1,
 	ULDocumentSaveAs	= 2,
 	ULDocumentSaveTo	= 3
-} ULDocumentSaveOperation;
+};
 
 /*!
  @abstract A notification that is sent whenever an error during a save operation was not handled.

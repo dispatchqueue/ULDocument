@@ -22,6 +22,10 @@
 //	THE SOFTWARE.
 //
 
+#import <Foundation/Foundation.h>
+#if TARGET_OS_IPHONE
+#import <UIKit/UIKit.h>
+#endif
 #import "ULFilePresentationProxy.h"
 #import "ULWeakify.h"
 
